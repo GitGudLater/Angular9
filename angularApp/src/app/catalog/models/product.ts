@@ -5,7 +5,7 @@ export interface Product{
     ID:string;
     TYPE:string;
     DESIGNER:string;
-    SKU?:Object;// object map
+    SKU?:{ [key: string]: SKU };// object map
     PRICE:number;
     PICTURE:string;
 }

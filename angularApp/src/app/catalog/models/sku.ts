@@ -1,9 +1,9 @@
 export interface SKU {
-    id: string;
-    name: string;
-    sort: string;
-    deep: number;
-    length: number;
-    price: string;
-    weight: number;
+    ID: string;
+    NAME: string;
+    SORT: string;
+    DEEP: number;
+    LENGTH: number;
+    PRICE: string;
+    WEIGHT: number;
 }

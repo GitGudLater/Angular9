@@ -1,0 +1,11 @@
+@mixin flexbox($direction, $wrap) {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: $direction $wrap;
+    align-content: flex-start;
+}
+
+.flex-box {
+    @include flexbox(row, wrap)
+}
+
