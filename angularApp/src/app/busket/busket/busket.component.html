@@ -1,1 +1,5 @@
 <p>busket works!</p>
+<div *ngFor="let product of products.values()">
+    Bucket element
+    <button (click)="deleteFromBusket(product)"> delete </button>
+</div>

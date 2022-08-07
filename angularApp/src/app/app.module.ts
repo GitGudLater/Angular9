@@ -8,6 +8,7 @@ import { CatalogComponent } from './catalog/catalog/catalog.component';
 import { BusketComponent } from './busket/busket/busket.component';
 import { CatalogService } from './catalog/services/catalog.service';
 import { HttpClient,HttpClientModule, HttpHandler, HttpEvent } from '@angular/common/http';
+import { BusketService } from './busket/services/busket.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { HttpClient,HttpClientModule, HttpHandler, HttpEvent } from '@angular/co
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CatalogService, HttpClient, HttpClientModule],
+  providers: [CatalogService, HttpClient, HttpClientModule, BusketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

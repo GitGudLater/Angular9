@@ -2,8 +2,15 @@
 
 <div class="container flex-box">
     <div class="product flex-element" *ngFor="let product of products$ | async">
-        {{product.ID}}
-        Product information
+        <div>
+            {{product.ID}}
+        </div>
+        <div>
+            Product information
+        </div>
+        <div>
+            <button (click)="addProductToBusket(product)"> Click </button>
+        </div>
     </div>
 </div>
 

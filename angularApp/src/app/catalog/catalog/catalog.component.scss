@@ -9,3 +9,6 @@
     @include flexbox(row, wrap)
 }
 
+.product {
+    @include flexbox(column, nowrap)
+}

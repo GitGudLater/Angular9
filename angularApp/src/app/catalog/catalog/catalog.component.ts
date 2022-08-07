@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CatalogService } from '../services/catalog.service';
 import { Product } from '../models/product';
 import { map, Observable } from 'rxjs';
@@ -10,7 +10,6 @@ import { map, Observable } from 'rxjs';
 })
 export class CatalogComponent implements OnInit {
 
-  //public currentProduct:Product;
   public products$:Observable<Product[]> = this.catalogService.getProducts().pipe(map(dto => dto  as Product[]));
 
   constructor( private catalogService: CatalogService) {}
@@ -27,11 +26,11 @@ export class CatalogComponent implements OnInit {
   }
 
   deleteProduct() {
-
+    
   }
 
-  addProduct() {
-
+  addProductToBusket(product: Product) {
+    this.catalogService.addProductToBucket(product);
   }
 
 }
