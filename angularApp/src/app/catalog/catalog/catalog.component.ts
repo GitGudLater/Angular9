@@ -8,26 +8,11 @@ import { map, Observable } from 'rxjs';
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss']
 })
-export class CatalogComponent implements OnInit {
+export class CatalogComponent{
 
   public products$:Observable<Product[]> = this.catalogService.getProducts().pipe(map(dto => dto  as Product[]));
 
   constructor( private catalogService: CatalogService) {}
-
-  ngOnInit(): void {
-  }
-
-  getProducts() {
-
-  }
-
-  updateProduct() {
-
-  }
-
-  deleteProduct() {
-    
-  }
 
   addProductToBusket(product: Product) {
     this.catalogService.addProductToBucket(product);

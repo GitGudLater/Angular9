@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class CatalogService{
-    private productToBucket = new BehaviorSubject<Product>({} as Product);
+    private productToBucket = new BehaviorSubject<Product>({ ID: "initial"} as Product);
     currentProductToBucket = this.productToBucket.asObservable();
 
     constructor (private httpClient: HttpClient) {
@@ -14,7 +14,7 @@ export class CatalogService{
     }
 
     addProductToBucket(product: Product) {
-        this.productToBucket.next(product);
+        this.productToBucket == undefined ? this.productToBucket = new BehaviorSubject<Product>(product) : this.productToBucket.next(product);
     }
     getProducts() {
         return this.httpClient.get('assets/materials/files/jsons/products.json');
