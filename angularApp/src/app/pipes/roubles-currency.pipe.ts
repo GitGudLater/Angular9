@@ -5,6 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class RoublesPipe implements PipeTransform {
   transform(value: number | undefined, args?: any): string {
-    return value ? value.toString() + ' руб.' : '0 руб.';
+    return value ? value.toString() + ' руб.' : '';
   }
 }

@@ -18,7 +18,7 @@ export class BucketService{
 
     calculateMultipleProductPrice(product: BucketProduct) {
         return this.calculatePriceForProduct(product) * product.quantity;
-      }
+    }
     
     calculatePriceForProduct(product: BucketProduct) {
         return product.product.PRICE ? product.product.PRICE : this.calculateSkuPrice(product);

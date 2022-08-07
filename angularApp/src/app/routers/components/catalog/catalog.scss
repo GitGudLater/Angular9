@@ -1,14 +1,76 @@
-@mixin flexbox($direction, $wrap) {
+@mixin flexbox($direction, $wrap, $justifyContent) {
     display: flex;
-    justify-content: space-between;
+    justify-content: $justifyContent;
     flex-flow: $direction $wrap;
     align-content: flex-start;
 }
 
+.container {
+    margin-bottom: 15px;
+}
+
 .flex-box {
-    @include flexbox(row, wrap)
+    @include flexbox(row, wrap, flex-start);
+    background: linear-gradient( #ffffff, #dddedf);
+
 }
 
 .product {
-    @include flexbox(column, nowrap)
+    @include flexbox(column, nowrap, space-between);
+    height: 300px;
+    flex: 0 0 300px;
+    border-radius: 0.5em;
+    margin: 5px;
+    background: #ffffff;
+    font-family: Verdana, "Trebuchet MS", Geneva, sans-serif;
+
+    &__name {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-weight: bold;
+    }
+
+    &__price {
+        margin-left: 5px;
+        margin-right: 5px;
+        align-self: center;
+        font-size: large;
+        font-weight: bold;
+        color: rgb(1, 85, 212);
+    }
+
+    &__picture {
+        margin-top: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+
+    &__buy-button {
+        @include flexbox(column, nowrap, space-between);
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.button {
+    width: 90%;
+    height: 50px; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: rgb(10, 172, 236);
+    color: rgb(1, 85, 212);
+    font-size: large;
+    font-weight:bold;
+    transition-property: background-color , border-color , color;
+    transition-duration: .2s;
+}
+
+.button:hover {
+    background-color: rgb(161, 227, 253);
+    color:#ffffff;
+    border-color: rgb(161, 227, 253);
+    cursor: pointer;
 }

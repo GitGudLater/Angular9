@@ -18,6 +18,10 @@ export class CatalogComponent{
     this.catalogService.addProductToBucket(product);
   }
 
+  calculatePrice(product: Product): number {
+    return this.catalogService.calculatePriceForProduct(product);
+  }
+
 }
 
 

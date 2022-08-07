@@ -1,5 +1,3 @@
-<p>catalog works!</p>
-
 <div class="container flex-box">
     <div class="product flex-element container" *ngFor="let product of products$ | async">
         <div class="product__picture">
@@ -9,10 +7,10 @@
             {{product.NAME}}
         </div>
         <div class="product__price">
-            {{product.PRICE | rub}}
+            {{calculatePrice(product) | rub}}
         </div>
         <div class="product__buy-button">
-            <button (click)="addProductToBusket(product)"> Buy </button>
+            <button (click)="addProductToBusket(product)" class="button"> КУПИТЬ </button>
         </div>
     </div>
 </div>
