@@ -1,12 +1,12 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { CatalogService } from '../services/catalog.service';
-import { Product } from '../models/product';
+import { Component } from '@angular/core';
 import { map, Observable } from 'rxjs';
+import { Product } from 'src/app/models/product';
+import { CatalogService } from 'src/app/services/catalog/catalog.service';
 
 @Component({
   selector: 'app-catalog',
-  templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.scss']
+  templateUrl: './catalog.html',
+  styleUrls: ['./catalog.scss']
 })
 export class CatalogComponent{
 

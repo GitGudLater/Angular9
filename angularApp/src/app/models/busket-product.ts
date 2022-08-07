@@ -1,4 +1,4 @@
-import { Product } from "src/app/catalog/models/product";
+import { Product } from "src/app/models/product";
 
 export interface BucketProduct {
     quantity: number;

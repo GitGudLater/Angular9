@@ -1,19 +1,19 @@
 import { Component, HostListener, OnChanges, OnInit } from '@angular/core';
-import { CatalogService } from 'src/app/catalog/services/catalog.service';
-import { BucketProduct } from '../models/busket-product';
-import { BusketService } from '../services/busket.service';
+import { BucketProduct } from 'src/app/models/busket-product';
+import { BucketService } from 'src/app/services/bucket/bucket.service';
+import { CatalogService } from 'src/app/services/catalog/catalog.service';
 
 @Component({
   selector: 'app-busket',
-  templateUrl: './busket.component.html',
-  styleUrls: ['./busket.component.scss']
+  templateUrl: './bucket.html',
+  styleUrls: ['./bucket.scss']
 })
-export class BusketComponent implements OnInit {
+export class BucketComponent implements OnInit {
   public products: Map<string, BucketProduct> = new Map();
 
   public resultPrice: number = 0;
 
-  constructor(public catalogService:CatalogService, public busketService: BusketService) { }
+  constructor(public catalogService:CatalogService, public busketService: BucketService) { }
 
   ngOnInit(): void {
     this.catalogService.currentProductToBucket.subscribe(product => {

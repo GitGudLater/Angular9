@@ -1,10 +1,9 @@
-import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Product } from "src/app/catalog/models/product";
-import { BucketProduct } from "../models/busket-product";
+import { Product } from "src/app/models/product";
+import { BucketProduct } from "../../models/busket-product";
 
 @Injectable()
-export class BusketService{
+export class BucketService{
 
 
     constructor () {}

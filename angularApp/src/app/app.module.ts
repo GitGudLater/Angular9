@@ -1,28 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PostsComponent } from './posts/posts/posts.component';
-import { CatalogComponent } from './catalog/catalog/catalog.component';
-import { BusketComponent } from './busket/busket/busket.component';
-import { CatalogService } from './catalog/services/catalog.service';
-import { HttpClient,HttpClientModule, HttpHandler, HttpEvent } from '@angular/common/http';
-import { BusketService } from './busket/services/busket.service';
+import { CatalogService } from './services/catalog/catalog.service';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
+import { BucketService } from './services/bucket/bucket.service';
+import { BucketComponent } from './routers/components/bucket/bucket.component';
+import { CatalogComponent } from './routers/components/catalog/catalog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent,
     CatalogComponent,
-    BusketComponent
+    BucketComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CatalogService, HttpClient, HttpClientModule, BusketService],
+  providers: [CatalogService, HttpClient, HttpClientModule, BucketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
