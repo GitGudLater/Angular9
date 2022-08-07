@@ -6,14 +6,14 @@
         {{product.quantity}}
     </div>
     <div class="product__price">
-        {{calculatePriceForProduct(product)}}
+        {{calculatePriceForProduct(product) | rub}}
     </div>
     <div class="product__multiple-price">
-        {{calculateMultipleProductPrice(product)}}
+        {{calculateMultipleProductPrice(product) | rub}}
     </div>
     <div class="bucket-product buttons">
         <button (click)="deleteFromBusket(product)" class="decrease"> < </button>
         <button (click)="addToBusket(product)" class="increase"> > </button>
     </div>
 </div>
-<div class="price"> total {{resultPrice}}</div>
+<div class="price"> total {{resultPrice | rub}}</div>

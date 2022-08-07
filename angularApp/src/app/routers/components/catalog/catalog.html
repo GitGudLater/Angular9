@@ -9,7 +9,7 @@
             {{product.NAME}}
         </div>
         <div class="product__price">
-            {{product.PRICE}}
+            {{product.PRICE | rub}}
         </div>
         <div class="product__buy-button">
             <button (click)="addProductToBusket(product)"> Buy </button>
