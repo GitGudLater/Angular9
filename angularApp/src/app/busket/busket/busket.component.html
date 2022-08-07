@@ -1,6 +1,19 @@
-<p>busket works!</p>
-<div *ngFor="let product of products.values()">
-    {{product.product.NAME}}
-    <button (click)="deleteFromBusket(product)"> < </button>
-    <button (click)="addToBusket(product)"> > </button>
+<div *ngFor="let product of products.values()" class="bucket-product container">
+    <div class="product__name">
+        {{product.product.NAME}}
+    </div>
+    <div class="product__quantity">
+        {{product.quantity}}
+    </div>
+    <div class="product__price">
+        {{calculatePriceForProduct(product)}}
+    </div>
+    <div class="product__multiple-price">
+        {{calculateMultipleProductPrice(product)}}
+    </div>
+    <div class="bucket-product buttons">
+        <button (click)="deleteFromBusket(product)" class="decrease"> < </button>
+        <button (click)="addToBusket(product)" class="increase"> > </button>
+    </div>
 </div>
+<div class="price"> total {{resultPrice}}</div>

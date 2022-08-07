@@ -1,15 +1,18 @@
 <p>catalog works!</p>
 
 <div class="container flex-box">
-    <div class="product flex-element" *ngFor="let product of products$ | async">
-        <div>
+    <div class="product flex-element container" *ngFor="let product of products$ | async">
+        <div class="product__picture">
+            {{product.PICTURE}}
+        </div>
+        <div class="product__name">
             {{product.NAME}}
         </div>
-        <div>
-            Product information
+        <div class="product__price">
+            {{product.PRICE}}
         </div>
-        <div>
-            <button (click)="addProductToBusket(product)"> Click </button>
+        <div class="product__buy-button">
+            <button (click)="addProductToBusket(product)"> Buy </button>
         </div>
     </div>
 </div>
