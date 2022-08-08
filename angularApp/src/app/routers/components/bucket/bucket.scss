@@ -43,6 +43,20 @@
     }
 }
 
+.bucket-input:invalid {
+    border: red solid 3px;
+    background-color: red;
+    color:#ffffff;
+}
+
+.bucket-input {
+    width: 50px;
+    border: rgb(161, 227, 253) solid 3px;
+    color: black;
+    background-color: #ffffff;
+    align-self: center;
+}
+
 .bucket-product {
     @include flexbox(column, nowrap);
     &__elements {
@@ -80,6 +94,23 @@
     font-size: large;
     transition-property: background-color , border-color , color;
     transition-duration: .2s;
+}
+
+.button-remove {
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    font-size: large;
+    transition-property: background-color , border-color , color;
+    transition-duration: .2s;
+    color: red;
+}
+
+.button-remove:hover {
+    background-color: red;
+    color:#ffffff;
+    border-color: red;
+    cursor: pointer;
 }
 
 .button:hover {

@@ -10,7 +10,7 @@
 }
 
 .flex-box {
-    @include flexbox(row, wrap, center);
+    @include flexbox(row, wrap, flex-start);
     background: linear-gradient( #ffffff, #dddedf);
 
 }
@@ -19,21 +19,26 @@
     @include flexbox(row, nowrap, space-between);
 }
 
+.sku-labels {
+    @include flexbox(row, nowrap, flex-start);
+    margin-bottom: 10px;
+}
+
 .sku{
     &__name {
         width: 300px;
     }
     &__deep {
-        width: 10px;
+        width: 100px;
     }
     &__length {
-        width: 30px;
+        width: 120px;
     }
     &__weight {
-        width: 30px;
+        width: 120px;
     }
     &__price {
-        width: 100px;
+        width: 160px;
     }
     &__button {
         background-color: #ffffff;
@@ -54,11 +59,12 @@
 .product {
     @include flexbox(column, nowrap, space-between);
     height: 500px;
-    flex: 0 0 800px;
+    flex: 0 0 900px;
     border-radius: 0.5em;
     margin: 5px;
     background: #ffffff;
     font-family: Verdana, "Trebuchet MS", Geneva, sans-serif;
+    overflow: auto;
 
     &__name {
         margin-left: 5px;

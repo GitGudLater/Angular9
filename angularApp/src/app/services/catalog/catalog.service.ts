@@ -23,7 +23,7 @@ export class CatalogService{
     convertCustomProductToBucket(sku: SKU): BucketProduct {
         return { ID: sku.ID, NAME: sku.NAME, PRICE: Number(sku.PRICE)} as BucketProduct;
     }
-
+    
     getProducts() {
         return this.httpClient.get('assets/materials/files/jsons/products.json');
     }

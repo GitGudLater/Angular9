@@ -14,6 +14,23 @@
         </div>
         <ng-template #custom>
             <div class="product__sku container">
+                <div class="sku-labels">
+                    <div class="sku__name">
+                        Название
+                    </div>
+                    <div class="sku__deep">
+                        Глубина
+                    </div>
+                    <div class="sku__length">
+                        Длинна
+                    </div>
+                    <div class="sku__weight">
+                        Вес
+                    </div>
+                    <div class="sku__price">
+                        Стоимость
+                    </div>
+                </div>
                 <div *ngFor="let sku of transformSkuColl(product.SKU)" class="sku-element container">
                     <div class="sku__name">
                         {{sku.NAME}}
