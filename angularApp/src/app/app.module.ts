@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from './routers/app-routing.module';
+import { AppComponent } from './routers/components/app/app.component';
 import { CatalogService } from './services/catalog/catalog.service';
 import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { BucketService } from './services/bucket/bucket.service';
