@@ -24,16 +24,16 @@
             </div>
             <div class="product__quantity">
                 <div class="bucket-product__button">
-                    <button (click)="deleteFromBusket(product)" class="button"> < </button>
+                    <button (click)="decreaseQuantityFromBusket(product)" class="button"> < </button>
                 </div>
                 <div>
-                    <input class="bucket-input" name="quantityField" min="1" [value]="product.QUANTITY" (change)="changeProductQuantity(product, $event)" pattern="[1-9]{1,3}" placeholder="type from 1 to 3-digit">
+                    <input class="bucket-input" name="quantityField" min="1" [value]="product.QUANTITY" (change)="changeProductQuantity(product, $event)" pattern="[0-9]{1,3}" placeholder="type from 1 to 3-digit">
                 </div>
                 <div class="bucket-product__button">
                     <button (click)="addToBusket(product)" class="button"> > </button>
                 </div>
                 <div class="bucket-product__button">
-                    <button (click)="deleteFromBusket(product)" class="button-remove"> x </button>
+                    <button (click)="deleteFromBusket(product.ID)" class="button-remove"> x </button>
                 </div>
             </div>
             <div class="product__price">

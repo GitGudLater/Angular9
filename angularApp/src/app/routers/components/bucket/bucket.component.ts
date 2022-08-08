@@ -27,10 +27,14 @@ export class BucketComponent implements OnInit {
     });
   }
 
-  deleteFromBusket(product: BucketProduct) {
+  decreaseQuantityFromBusket(product: BucketProduct) {
     (product.QUANTITY as number) > 1 ? 
       this.products.set(product.ID, {...product, QUANTITY: --(product.QUANTITY as number)}) : 
       this.products.delete(product.ID);
+  }
+
+  deleteFromBusket(productId: string) {
+    this.products.delete(productId);
   }
 
   addToBusket(product: BucketProduct) {
