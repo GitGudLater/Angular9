@@ -8,6 +8,7 @@ import { BucketService } from './services/bucket/bucket.service';
 import { BucketComponent } from './routers/components/bucket/bucket.component';
 import { CatalogComponent } from './routers/components/catalog/catalog.component';
 import { RoublesPipe } from './pipes/roubles-currency.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RoublesPipe } from './pipes/roubles-currency.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [CatalogService, HttpClient, HttpClientModule, BucketService],
   bootstrap: [AppComponent]

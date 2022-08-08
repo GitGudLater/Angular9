@@ -20,21 +20,21 @@
     <div *ngFor="let product of products.values()" class="bucket-product container">
         <div class="bucket-product__elements">
             <div class="product__name">
-                {{product.product.NAME}}
+                {{product.NAME}}
             </div>
             <div class="product__quantity">
                 <div class="bucket-product button">
                     <button (click)="deleteFromBusket(product)" class="button"> < </button>
                 </div>
                 <div>
-                    {{product.quantity}}
+                    {{product.QUANTITY}}
                 </div>
                 <div class="bucket-product button">
                     <button (click)="addToBusket(product)" class="button"> > </button>
                 </div>
             </div>
             <div class="product__price">
-                {{calculatePriceForProduct(product) | rub}}
+                {{product.PRICE | rub}}
             </div>
             <div class="product__multiple-price">
                 {{calculateMultipleProductPrice(product) | rub}}

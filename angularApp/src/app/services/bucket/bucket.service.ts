@@ -5,31 +5,18 @@ import { BucketProduct } from "../../models/busket-product";
 @Injectable()
 export class BucketService{
 
-
     constructor () {}
 
     addExistedProductToBucket(currentBucketProduct: BucketProduct): BucketProduct {
-        return {...currentBucketProduct, quantity: ++currentBucketProduct.quantity };
+        return {...currentBucketProduct, QUANTITY: ++(currentBucketProduct.QUANTITY as number) };
     }
 
-    addNewProductToBucket(newProduct: Product): BucketProduct {
-        return { product: newProduct, quantity:1}
+    addNewProductToBucket(newProduct: BucketProduct): BucketProduct {
+        return { ...newProduct, QUANTITY:1}
     }
 
-    calculateMultipleProductPrice(product: BucketProduct) {
-        return this.calculatePriceForProduct(product) * product.quantity;
-    }
-    
-    calculatePriceForProduct(product: BucketProduct) {
-        return product.product.PRICE ? product.product.PRICE : this.calculateSkuPrice(product);
-    }
-    
-    calculateSkuPrice(product: BucketProduct) {
-        let sum = 0;
-        for( let subProductKey in product.product.SKU) {
-          sum += Number(product.product.SKU[subProductKey].PRICE);
-        }
-        return sum;
+    calculateMultipleProductPrice(product: BucketProduct): number {
+        return product.PRICE * (product.QUANTITY as number);
     }
 
     calculateFullBucketPrice(products: Map<string, BucketProduct>) {
