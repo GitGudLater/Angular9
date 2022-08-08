@@ -1,0 +1,121 @@
+@mixin flexbox($direction, $wrap) {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: $direction $wrap;
+    align-content: flex-start;
+}
+
+.header {
+    font-size: xx-large;
+}
+
+.check-list {
+    box-shadow: 0px 0px 8px 5px rgb(218, 218, 218);
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    font-weight:bold;
+}
+
+.button {
+    @include flexbox(row, nowrap);
+    width: 30px;
+    flex: 0 0;
+}
+
+.bucket-labels {
+    @include flexbox(row, nowrap);
+    .product {
+        &__name {
+            width: 500px;
+        }
+        &__quantity {
+            width: 100px;
+        }
+        &__price {
+            width: 180px;
+        }
+        &__multiple-price {
+            width: 180px;
+        }
+    }
+}
+
+.bucket-input:invalid {
+    border: red solid 3px;
+    background-color: red;
+    color:#ffffff;
+}
+
+.bucket-input {
+    width: 50px;
+    border: rgb(161, 227, 253) solid 3px;
+    color: black;
+    background-color: #ffffff;
+    align-self: center;
+}
+
+.bucket-product {
+    @include flexbox(column, nowrap);
+    &__elements {
+        @include flexbox(row, nowrap);
+        .product {
+            &__name {
+                width: 500px;
+            }
+            &__quantity {
+                width: 100px;
+                @include flexbox(row, nowrap);
+            }
+            &__price {
+                width: 180px;
+            }
+            &__multiple-price {
+                width: 180px;
+            }
+        }
+    }
+}
+
+.price{
+    @include flexbox(row, nowrap);
+    &__element {
+        width: 180px;
+    }
+}
+
+.button {
+    color: rgb(1, 85, 212);
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    font-size: large;
+    transition-property: background-color , border-color , color;
+    transition-duration: .2s;
+}
+
+.button-remove {
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    font-size: large;
+    transition-property: background-color , border-color , color;
+    transition-duration: .2s;
+    color: red;
+}
+
+.button-remove:hover {
+    background-color: red;
+    color:#ffffff;
+    border-color: red;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(161, 227, 253);
+    color:#ffffff;
+    border-color: rgb(161, 227, 253);
+    cursor: pointer;
+}

@@ -1,0 +1,58 @@
+<div class="container flex-box">
+    <div class="product flex-element container" *ngFor="let product of products$ | async">
+        <div class="product__picture">
+            {{product.PICTURE}}
+        </div>
+        <div class="product__name">
+            {{product.NAME}}
+        </div>
+        <div *ngIf="!product.SKU; else custom" class="product__price">
+            {{calculatePrice(product) | rub}}
+        </div>
+        <div class="product__buy-button" *ngIf="!product.SKU;">
+            <button (click)="addProductToBusket(product)" class="button"> КУПИТЬ </button>
+        </div>
+        <ng-template #custom>
+            <div class="product__sku container">
+                <div class="sku-labels">
+                    <div class="sku__name">
+                        Название
+                    </div>
+                    <div class="sku__deep">
+                        Глубина
+                    </div>
+                    <div class="sku__length">
+                        Длинна
+                    </div>
+                    <div class="sku__weight">
+                        Вес
+                    </div>
+                    <div class="sku__price">
+                        Стоимость
+                    </div>
+                </div>
+                <div *ngFor="let sku of transformSkuColl(product.SKU)" class="sku-element container">
+                    <div class="sku__name">
+                        {{sku.NAME}}
+                    </div>
+                    <div class="sku__deep">
+                        {{sku.DEEP}}
+                    </div>
+                    <div class="sku__length">
+                        {{sku.LENGTH}}
+                    </div>
+                    <div class="sku__weight">
+                        {{sku.WEIGHT}}
+                    </div>
+                    <div class="sku__price">
+                        {{sku.PRICE}}
+                    </div>
+                    <div class="sku__buy-button">
+                        <button (click)="addCustomProductToBucket(sku)" class="sku__button"> КУПИТЬ </button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
